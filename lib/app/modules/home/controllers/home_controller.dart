@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
+import 'package:latihan_getconnect/app/data/models/user_model.dart';
+import 'package:latihan_getconnect/app/data/providers/user_provider.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  UserProvider userProv = UserProvider();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+ Future<User?> getUser(int id)async{
+  return await userProv.getUser(id);
+ }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+ Future<List<User>?> getAllUser()async{
+  return await userProv.getAllUser();
+ }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
-  void increment() => count.value++;
 }
